@@ -11,7 +11,10 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
   instance:
     hostname: weizhuce.top
+    prefer-ip-address: true #这样显示的时候是机器名，当时访问时是ip
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   server:
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 4000
+
 
